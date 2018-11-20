@@ -1,0 +1,7 @@
+{
+    "name": "shared-library",
+    "private": true,
+    "scripts": {
+        "release": "./release.sh"
+    }
+}
