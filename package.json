@@ -1,8 +1,8 @@
 {
+    "version": "0.0.0",
     "name": "shared-library",
     "private": true,
     "scripts": {
         "release": "./release.sh"
-    },
-    "version": "0.0.1"
+    }
 }
