@@ -5,11 +5,13 @@ set -e
 # Get new tags from remote
 git fetch --tags
 # Get latest tag name
-latestTag=$(git describe --tags $(git rev-list --tags --max-count=1))
+latestTag=$(git rev-list --tags --max-count=1)
+[ -n "$latestTag" ] && latestTag=$(git describe --tags $latestTag)
+
 # remove 'v' from latestTag
 latestTag=${latestTag#"v"}
 
-echo "Enter release version (latest is $latestTag): "
+echo "Enter release version (latest is ${latestTag:-0.0.0}): "
 read VERSION
 
 read -p "Releasing $VERSION - are you sure? (y/n)" -n 1 -r
